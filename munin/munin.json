@@ -1,0 +1,11 @@
+{
+  "fqdn": "localhost",
+  "munin": {
+    "server_auth_method": "htauth"
+  },
+  "run_list":[
+    "recipe[yum]",
+    "recipe[yum-epel]",
+    "recipe[munin::server]"
+  ]
+}
