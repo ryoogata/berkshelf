@@ -1,11 +1,8 @@
 {
   "mysql": {
-    "server_root_password": "bbtower",
-    "server_repl_password": "bbtower",
-    "server_debian_password": "bbtower"
-  },
-  "wordpress": {
-    "server_name": "localhost"
+    "server_root_password": "secretpassword",
+    "server_repl_password": "secretpassword",
+    "server_debian_password": "secretpassword"
   },
   "run_list":[
     "recipe[mysql::server]"
