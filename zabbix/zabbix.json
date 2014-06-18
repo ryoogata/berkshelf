@@ -1,0 +1,27 @@
+{
+  "mysql": {
+    "server_root_password": "nil"
+  },
+  "zabbix": {
+    "server": {
+      "version": "2.2.1"
+    },
+    "agent": {
+      "version": "2.2.1",
+      "servers": ["localhost"]
+    },
+    "web": {
+      "fqdn": "localhost"
+    }
+  },
+  "run_list":[
+    "recipe[yum-epel]",
+    "recipe[apache2::default]",
+    "recipe[mysql::server]",
+    "recipe[mysql::client]",
+    "recipe[zabbix]",
+    "recipe[zabbix::database]",
+    "recipe[zabbix::server]",
+    "recipe[zabbix::web]"
+  ]
+}

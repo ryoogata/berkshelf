@@ -1,0 +1,6 @@
+source "https://api.berkshelf.com"
+
+cookbook 'mysql', '5.2.12'
+cookbook 'zabbix', '0.8.0'
+cookbook 'yum-epel', '0.3.6'
+cookbook 'apache2', '1.10.4'
