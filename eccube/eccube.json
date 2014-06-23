@@ -1,0 +1,27 @@
+{
+  "apache": {
+    "default_site_enabled": "true"
+  },
+  "postgresql": {
+    "password": {
+      "postgres": "secretpassword"
+    },
+  },
+  "eccube": {
+    "database": {
+      "_DATABASE_NAME": "eccube_db",
+      "_USER_NAME": "eccube_db_user",
+      "_USER_PASSWORD": "eccube_db_user_password"
+    }
+  },
+  "run_list":[
+    "recipe[postgresql::server]",
+    "recipe[database::postgresql]",
+    "recipe[apache2::default]",
+    "recipe[php]",
+    "recipe[php::package]",
+    "recipe[php::module_pgsql]",
+    "recipe[eccube::default]",
+    "recipe[eccube::postgresql]"
+  ]
+}
