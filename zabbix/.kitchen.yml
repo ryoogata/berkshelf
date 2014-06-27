@@ -22,16 +22,18 @@ platforms:
       - ["private_network", {ip: "192.168.33.40"}]
 
 suites:
-  - name: default
+  - name: mysql
     run_list:
       - recipe[yum-epel]
       - recipe[apache2::default]
       - recipe[mysql::server]
       - recipe[mysql::client]
+      - recipe[mysql-custom::default]
       - recipe[zabbix]
       - recipe[zabbix::database]
       - recipe[zabbix::server]
       - recipe[zabbix::web]
+      - recipe[zabbix-custom::japanese_font]
     attributes:
       zabbix:
         server:
