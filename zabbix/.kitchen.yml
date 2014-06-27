@@ -45,3 +45,26 @@ suites:
           fqdn: 'localhost'
       mysql:
         server_root_password: nil
+  - name: postgresql
+    run_list:
+      - recipe[yum-epel]
+      - recipe[apache2::default]
+      - recipe[postgresql::server]
+      - recipe[postgresql::client]
+      - recipe[zabbix]
+      - recipe[zabbix::database]
+      - recipe[zabbix::server]
+      - recipe[zabbix::web]
+      - recipe[zabbix-custom::japanese_font]
+    attributes:
+      zabbix:
+        server:
+          version: 2.2.1
+        agent:
+          servers: ['localhost']
+          version: 2.2.1
+        web:
+          fqdn: 'localhost'
+      postgresql:
+        password:
+          postgres: nil
