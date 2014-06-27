@@ -19,9 +19,11 @@
     "recipe[apache2::default]",
     "recipe[mysql::server]",
     "recipe[mysql::client]",
+    "recipe[mysql-custom::default]",
     "recipe[zabbix]",
     "recipe[zabbix::database]",
     "recipe[zabbix::server]",
-    "recipe[zabbix::web]"
+    "recipe[zabbix::web]",
+    "recipe[zabbix-custom::japanese_font]"
   ]
 }
