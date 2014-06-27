@@ -28,3 +28,4 @@ suites:
     attributes:
       mysql:
         server_root_password: 'secretpassword'
+        version: '5.6'
