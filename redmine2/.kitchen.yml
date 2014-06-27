@@ -37,6 +37,7 @@ suites:
       - recipe[yum-epel::default]
       - recipe[networking_basic::default]
       - recipe[mysql::server]
+      - recipe[mysql-custom::default]
       - recipe[redmine2::default]
     attributes:
       mysql:
