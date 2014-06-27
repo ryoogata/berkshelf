@@ -41,8 +41,6 @@ suites:
     attributes:
       mysql:
         server_root_password: 'secretpassword'
-        server_repl_password: 'secretpassword'
-        server_debian_password: 'secretpassword'
       redmine: 
         version: '2.5.1'
         host: 'localhost'
