@@ -50,11 +50,11 @@ suites:
 
   - name: postgresql 
     run_list:
-      - recipe[yum]
-      - recipe[yum-epel]
-      - recipe[networking_basic]
+      - recipe[yum::default]
+      - recipe[yum-epel::default]
+      - recipe[networking_basic::default]
       - recipe[postgresql::server]
-      - recipe[redmine2]
+      - recipe[redmine2::default]
     attributes:
       postgresql:
         password:
