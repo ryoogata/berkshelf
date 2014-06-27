@@ -18,7 +18,7 @@ suites:
       - recipe[postgresql::server]
       - recipe[database::postgresql]
       - recipe[apache2::default]
-      - recipe[php]
+      - recipe[php::default]
       - recipe[php::package]
       - recipe[php::module_pgsql]
       - recipe[eccube::default]
