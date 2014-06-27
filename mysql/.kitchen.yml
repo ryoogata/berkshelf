@@ -24,6 +24,7 @@ suites:
   - name: default
     run_list:
       - recipe[mysql::server]
+      - recipe[mysql-custom::default]
     attributes:
       mysql:
         server_root_password: 'secretpassword'
