@@ -1,0 +1,11 @@
+{
+  "splunk": {
+    "_DOWNLOAD_URL": {
+      "SPLUNK_RPM": "http://www.splunk.com/page/download_track?file=6.1.2/splunk/linux/splunk-6.1.2-213098-linux-2.6-x86_64.rpm&ac=ga0508_s_splunk&wget=true&name=wget&platform=Linux&architecture=x86_64&version=6.1.2&product=splunk&typed=release",
+      "SPLUNK_DEB": "http://www.splunk.com/page/download_track?file=6.1.2/splunk/linux/splunk-6.1.2-213098-linux-2.6-amd64.deb&ac=ga0508_s_splunk&wget=true&name=wget&platform=Linux&architecture=x86_64&version=6.1.2&product=splunk&typed=release"
+    }
+  },
+  "run_list":[
+    "recipe[splunk::install_splunk]"
+  ]
+}

@@ -1,0 +1,40 @@
+---
+driver:
+  name: vagrant
+  driver_config:
+    require_chef_omnibus: 11.12.4
+
+provisioner:
+  name: chef_solo
+  environments_path: "test/integration/environments"
+  data_bags_path: "test/integration/data_bags"
+
+platforms:
+  - name: ubuntu-13.10
+    driver:
+      name: vagrant
+      box: opscode-ubuntu-13.10
+    driver_config:
+      network:
+      - ["private_network", {ip: "192.168.33.10"}]
+      - ["forwarded_port", {guest: 8000, host: 8000}]
+
+  - name: centos-6.5
+    driver:
+      name: vagrant
+      box: opscode-centos-6.5
+    driver_config:
+      network:
+      - ["private_network", {ip: "192.168.33.20"}]
+      - ["forwarded_port", {guest: 8000, host: 8080}]
+    run_list:
+      - recipe[splunk::install_splunk]
+      - recipe[chef-serverspec-handler::default]
+
+suites:
+  - name: default
+    attributes:
+      splunk:
+        _DOWNLOAD_URL:
+          SPLUNK_RPM: 'http://www.splunk.com/page/download_track?file=6.1.2/splunk/linux/splunk-6.1.2-213098-linux-2.6-x86_64.rpm&ac=ga0508_s_splunk&wget=true&name=wget&platform=Linux&architecture=x86_64&version=6.1.2&product=splunk&typed=release'
+          SPLUNK_DEB: 'http://www.splunk.com/page/download_track?file=6.1.2/splunk/linux/splunk-6.1.2-213098-linux-2.6-amd64.deb&ac=ga0508_s_splunk&wget=true&name=wget&platform=Linux&architecture=x86_64&version=6.1.2&product=splunk&typed=release'

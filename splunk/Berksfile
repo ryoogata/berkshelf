@@ -1,0 +1,10 @@
+source "https://api.berkshelf.com"
+
+group :development do
+  cookbook 'splunk', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/splunk'
+  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
+end
+
+group :production do
+  cookbook 'splunk', git: 'https://github.com/ryoogata/splunk.git'
+end
