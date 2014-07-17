@@ -1,0 +1,24 @@
+{
+  "mysql": {
+    "server_root_password": "secretpassword"
+  },
+  "git": {
+    "version": "1.9.4"
+  },
+  "apache": {
+    "default_site_enabled": "true"
+  },
+  "run_list":[
+    "recipe[git::source]",
+    "recipe[apache2::default]",
+    "recipe[mysql::server]",
+    "recipe[mysql-custom::default]",
+    "recipe[database::mysql]",
+    "recipe[php::default]",
+    "recipe[php::package]",
+    "recipe[php::module_gd]",
+    "recipe[php::module_ldap]",
+    "recipe[php::module_mysql]",
+    "recipe[limesurvey::default]"
+  ]
+}

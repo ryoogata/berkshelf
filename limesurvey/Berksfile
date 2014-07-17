@@ -1,0 +1,41 @@
+source "https://api.berkshelf.com"
+
+group :production do
+  cookbook 'mysql'
+  cookbook 'mysql-custom', git: 'https://github.com/ryoogata/mysql-custom.git'
+  cookbook 'php'
+  cookbook 'database'
+  cookbook 'git'
+  cookbook 'build-essential'
+  cookbook 'yum'
+  cookbook 'yum-epel'
+  cookbook 'apache2'
+  cookbook 'limesurvey', git: 'https://github.com/ryoogata/limesurvey.git'
+end
+
+group :test do
+  cookbook 'mysql'
+  cookbook 'mysql-custom', git: 'https://github.com/ryoogata/mysql-custom.git'
+  cookbook 'php'
+  cookbook 'database'
+  cookbook 'git'
+  cookbook 'build-essential'
+  cookbook 'yum'
+  cookbook 'yum-epel'
+  cookbook 'apache2'
+  cookbook 'limesurvey', git: 'https://github.com/ryoogata/limesurvey.git'
+end
+
+group :development do
+  cookbook 'mysql'
+  cookbook 'mysql-custom', git: 'https://github.com/ryoogata/mysql-custom.git'
+  cookbook 'php'
+  cookbook 'database'
+  cookbook 'git'
+  cookbook 'build-essential'
+  cookbook 'yum'
+  cookbook 'yum-epel'
+  cookbook 'apache2'
+  cookbook 'limesurvey', git: 'https://github.com/ryoogata/limesurvey.git'
+  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
+end
