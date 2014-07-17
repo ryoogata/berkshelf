@@ -1,4 +1,14 @@
 source "https://api.berkshelf.com"
 
-cookbook 'mysql', '5.2.12'
-cookbook 'mysql-custom', git: 'https://github.com/ryoogata/mysql-custom.git'
+group :production do
+  cookbook 'mysql', '5.2.12'
+end
+
+group :test do
+  cookbook 'mysql'
+end
+
+group :development do
+  cookbook 'mysql'
+  cookbook 'mysql-custom', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/mysql-custom'
+end

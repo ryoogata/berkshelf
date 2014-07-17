@@ -1,7 +1,26 @@
 source "https://api.berkshelf.com"
 
-cookbook 'eccube', git: "https://github.com/ryoogata/eccube.git"
-cookbook 'mysql', '5.2.12'
-cookbook 'apache2', '1.10.4'
-cookbook 'database', '2.2.0'
-cookbook 'php', '1.4.6'
+group :production do
+  cookbook 'eccube', git: "https://github.com/ryoogata/eccube.git"
+  cookbook 'mysql', '5.2.12'
+  cookbook 'apache2', '1.10.4'
+  cookbook 'database', '2.2.0'
+  cookbook 'php', '1.4.6'
+end
+
+group :test do
+  cookbook 'eccube', git: "https://github.com/ryoogata/eccube.git"
+  cookbook 'mysql'
+  cookbook 'apache2'
+  cookbook 'database'
+  cookbook 'php'
+end
+
+group :development do
+  cookbook 'eccube', git: "https://github.com/ryoogata/eccube.git"
+  cookbook 'mysql'
+  cookbook 'apache2'
+  cookbook 'database'
+  cookbook 'php'
+  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
+end

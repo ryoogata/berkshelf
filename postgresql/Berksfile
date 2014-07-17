@@ -1,3 +1,14 @@
 source "https://api.berkshelf.com"
 
-cookbook 'postgresql', '3.4.0'
+group :production do
+  cookbook 'postgresql', '3.4.0'
+end
+
+group :test do
+  cookbook 'postgresql'
+end
+
+group :development do
+  cookbook 'postgresql'
+  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
+end

@@ -1,9 +1,35 @@
 source "https://api.berkshelf.com"
 
-cookbook 'redmine2', '0.1.0'
-cookbook 'rbenv', git: "https://github.com/fnichol/chef-rbenv"
-cookbook 'mysql', '5.2.12'
-cookbook 'postgresql', '3.4.0'
-cookbook 'networking_basic', '0.0.7'
-cookbook 'yum', '3.2.0'
-cookbook 'yum-epel', '0.3.6'
+group :production do
+  cookbook 'redmine2', '0.1.0'
+  cookbook 'rbenv', git: "https://github.com/fnichol/chef-rbenv"
+  cookbook 'mysql', '5.2.12'
+  cookbook 'mysql-custom', git: "https://github.com/ryoogata/mysql-custom.git"
+  cookbook 'postgresql', '3.4.0'
+  cookbook 'networking_basic', '0.0.7'
+  cookbook 'yum', '3.2.0'
+  cookbook 'yum-epel', '0.3.6'
+end
+
+group :test do
+  cookbook 'redmine2'
+  cookbook 'rbenv', git: "https://github.com/fnichol/chef-rbenv"
+  cookbook 'mysql'
+  cookbook 'mysql-custom', git: "https://github.com/ryoogata/mysql-custom.git"
+  cookbook 'postgresql'
+  cookbook 'networking_basic'
+  cookbook 'yum'
+  cookbook 'yum-epel'
+end
+
+group :development do
+  cookbook 'redmine2'
+  cookbook 'rbenv', git: "https://github.com/fnichol/chef-rbenv"
+  cookbook 'mysql'
+  cookbook 'mysql-custom', git: "https://github.com/ryoogata/mysql-custom.git"
+  cookbook 'postgresql'
+  cookbook 'networking_basic'
+  cookbook 'yum'
+  cookbook 'yum-epel'
+  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
+end

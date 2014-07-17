@@ -1,3 +1,14 @@
 source "https://api.berkshelf.com"
 
-cookbook 'apache2', '1.10.4'
+group :production do
+  cookbook 'apache2', '1.10.4'
+end
+
+group :test do
+  cookbook 'apache2'
+end
+
+group :development do
+  cookbook 'apache2'
+  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
+end
