@@ -1,0 +1,31 @@
+I, [2014-06-30T15:26:15.602759 #7814]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-06-30T15:26:15.603062 #7814] ERROR -- Kitchen: ------Exception-------
+E, [2014-06-30T15:26:15.603096 #7814] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2014-06-30T15:26:15.603120 #7814] ERROR -- Kitchen: Message: Kitchen YAML file /Users/ryo/Dropbox/berkshelf/mysql/test/integration/.kitchen.yml does not exist.
+E, [2014-06-30T15:26:15.603144 #7814] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-06-30T15:26:15.603166 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:74:in `read'
+E, [2014-06-30T15:26:15.603194 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:78:in `data'
+E, [2014-06-30T15:26:15.603232 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:66:in `suites'
+E, [2014-06-30T15:26:15.603268 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:90:in `filter_instances'
+E, [2014-06-30T15:26:15.603305 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:72:in `build_instances'
+E, [2014-06-30T15:26:15.603349 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:52:in `instances'
+E, [2014-06-30T15:26:15.603393 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:64:in `get_filtered_instances'
+E, [2014-06-30T15:26:15.603426 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:85:in `parse_subcommand'
+E, [2014-06-30T15:26:15.603458 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:37:in `block in call'
+E, [2014-06-30T15:26:15.603486 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:281:in `measure'
+E, [2014-06-30T15:26:15.603522 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:36:in `call'
+E, [2014-06-30T15:26:15.603547 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:47:in `perform'
+E, [2014-06-30T15:26:15.603569 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:118:in `block (2 levels) in <class:CLI>'
+E, [2014-06-30T15:26:15.603591 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2014-06-30T15:26:15.603613 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2014-06-30T15:26:15.603635 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:233:in `invoke_task'
+E, [2014-06-30T15:26:15.603657 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2014-06-30T15:26:15.603679 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2014-06-30T15:26:15.603701 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/bin/kitchen:13:in `block in <top (required)>'
+E, [2014-06-30T15:26:15.603723 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/lib/kitchen/errors.rb:81:in `with_friendly_errors'
+E, [2014-06-30T15:26:15.603757 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/test-kitchen-1.2.1/bin/kitchen:13:in `<top (required)>'
+E, [2014-06-30T15:26:15.603781 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/bin/kitchen:23:in `load'
+E, [2014-06-30T15:26:15.603803 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/bin/kitchen:23:in `<main>'
+E, [2014-06-30T15:26:15.603825 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/bin/ruby_executable_hooks:15:in `eval'
+E, [2014-06-30T15:26:15.603847 #7814] ERROR -- Kitchen: /Users/ryo/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/bin/ruby_executable_hooks:15:in `<main>'
+E, [2014-06-30T15:26:15.603868 #7814] ERROR -- Kitchen: ----------------------

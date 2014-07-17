@@ -1,0 +1,13 @@
+{
+  "name": "development",
+  "description": "",
+  "chef_type": "environment",
+  "json_class": "Chef::Environment",
+  "cookbook_version": {},
+  "default_attributes": {
+    "hello": {
+      "message": "This is development environment"
+    }
+  },
+  "override_attributes": {}
+}

@@ -1,0 +1,13 @@
+{
+  "name": "production",
+  "description": "",
+  "chef_type": "environment",
+  "json_class": "Chef::Environment",
+  "cookbook_version": {}, 
+  "default_attributes": {
+    "hello": {
+      "message": "This is production environment"
+    }
+  }, 
+  "override_attributes": {}
+}
