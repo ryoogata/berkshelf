@@ -11,8 +11,8 @@ platforms:
   - name: centos-6.5
     driver_config:
       network:
-      - ["forwarded_port", {guest: 80, host: 8088}]
-      - ["private_network", {ip: "192.168.33.1"}]
+      - ["private_network", {ip: "192.168.33.24"}]
+      - ["forwarded_port", {guest: 80, host: 8011, auto_correct: true}]
 
 suites:
   - name: default
