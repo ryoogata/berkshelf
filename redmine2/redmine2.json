@@ -1,18 +1,21 @@
 {
-  "mysql": {
-    "server_root_password": "secretpassword"
+  "postgresql": {
+    "password": {
+      "postgres": "secretpassword"
+    }
   },
   "redmine": {
-    "version": "2.4.5",
+    "version": "2.5.1",
     "host": "localhost",
     "db": {
-      "type": "mysql"
+      "type": "postgresql"
     }
   },
   "run_list":[
     "recipe[yum::default]",
     "recipe[yum-epel::default]",
     "recipe[networking_basic::default]",
+    "recipe[postgresql::server]",
     "recipe[redmine2::default]"
   ]
 }
