@@ -1,0 +1,13 @@
+source "https://api.berkshelf.com"
+
+# group :production do
+#   cookbook '', ''
+# end
+# 
+# group :test do
+#   cookbook ''
+# end
+
+group :development do
+  cookbook 'fswiki', git: "https://github.com/ryoogata/fswiki.git"
+end

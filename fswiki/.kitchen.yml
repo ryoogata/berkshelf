@@ -1,0 +1,55 @@
+---
+driver:
+  name: ec2
+  security_group_ids: ["sg-6744b502"]
+  ssh_key: <%= ENV['EC2_SSH_KEY_PATH'] %>
+  region: ap-northeast-1
+  availability_zone: ap-northeast-1a
+  interface: public
+
+  name: docker
+  binary: /usr/local/bin/docker
+  socket: tcp://192.168.59.103:2376
+
+  name: vagrant
+  ssh_key: ~/.vagrant.d/insecure_private_key
+
+provisioner:
+  name: chef_solo
+  environments_path: "test/integration/environments"
+  data_bags_path: "test/integration/data_bags"
+
+suites:
+  - name: default
+    run_list:
+    - recipe[apache2::default]
+    - recipe[apache2::mod_cgi]
+    - recipe[fswiki::install_fswiki]
+
+platforms:
+  - name: centos-6.5
+    driver:
+      name: vagrant
+      box: opscode-centos-6.5
+    driver_config:
+      require_chef_omnibus: latest
+      network:
+      - ["private_network", {type: "dhcp"}]
+      - ["forwarded_port", {guest: 80, host: 8080, auto_correct: true}]
+
+  - name: ubuntu-13.10
+    driver:
+      name: vagrant
+      box: opscode-ubuntu-13.10
+    driver_config:
+      network:
+      - ["private_network", {type: "dhcp"}]
+      - ["forwarded_port", {guest: 80, host: 8000, auto_correct: true}]
+
+  - name: docker-centos6
+    driver:
+      name: docker
+    driver_config:
+      image: "centos:centos6"
+
+<%= File.read("../.conf/cloud.txt") %>
