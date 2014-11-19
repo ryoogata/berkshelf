@@ -46,10 +46,11 @@ platforms:
       - ["private_network", {type: "dhcp"}]
       - ["forwarded_port", {guest: 80, host: 8000, auto_correct: true}]
 
-  - name: docker-centos6
+  - name: docker-centos-6
     driver:
       name: docker
     driver_config:
-      image: "centos:centos6"
+      image: centos:6
+      platform: centos
 
 <%= File.read("../.conf/cloud.txt") %>
