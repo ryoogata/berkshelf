@@ -9,7 +9,6 @@ group :production do
   cookbook 'yum-epel', '0.3.6'
   cookbook 'yum', '3.2.0'
   cookbook 'apache2', '1.10.4'
-  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
 end
 
 group :test do
@@ -26,11 +25,11 @@ end
 group :development do
   cookbook 'zabbix'
   cookbook 'zabbix-custom', git: 'https://github.com/ryoogata/zabbix-custom.git'
-  cookbook 'mysql'
+  cookbook 'mysql', '5.6.1'
   cookbook 'mysql-custom', git: 'https://github.com/ryoogata/mysql-custom.git'
   cookbook 'postgresql'
   cookbook 'yum-epel'
   cookbook 'yum'
-  cookbook 'apache2'
-  cookbook 'chef-serverspec-handler', path: '/Users/ryo/Dropbox/chef-repo/site-cookbooks/chef-serverspec-handler'
+  cookbook 'apache2', '1.10.4'
+  cookbook 'database', '2.3.1'
 end
